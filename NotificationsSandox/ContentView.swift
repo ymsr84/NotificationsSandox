@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  NotificationsSandox
-//
-//  Created by Yamashiro on 2022/07/03.
-//
-
 import SwiftUI
 
 struct ContentView: View {

@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E737B6FE287B61730079280E /* BasicNotificationToggleAM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E737B6FD287B61730079280E /* BasicNotificationToggleAM.swift */; };
+		E737B700287B631E0079280E /* BasicNotificationTogglePM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E737B6FF287B631E0079280E /* BasicNotificationTogglePM.swift */; };
 		E74B511E287864480089C2B2 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74B511D287864480089C2B2 /* NotificationModel.swift */; };
 		E74B5122287A26810089C2B2 /* rotationEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74B5121287A26810089C2B2 /* rotationEffect.swift */; };
-		E7A8C0F0287A35420009EEBA /* 2toggleButtonRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A8C0EF287A35420009EEBA /* 2toggleButtonRow.swift */; };
 		E7A8C0F2287A361A0009EEBA /* NotificationToggleSimpleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A8C0F1287A361A0009EEBA /* NotificationToggleSimpleView.swift */; };
 		E7B2088C2870ED6B008A8731 /* NotificationsSandoxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B2088B2870ED6B008A8731 /* NotificationsSandoxApp.swift */; };
 		E7B2088E2870ED6B008A8731 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B2088D2870ED6B008A8731 /* ContentView.swift */; };
@@ -19,9 +20,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E737B6FD287B61730079280E /* BasicNotificationToggleAM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicNotificationToggleAM.swift; sourceTree = "<group>"; };
+		E737B6FF287B631E0079280E /* BasicNotificationTogglePM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicNotificationTogglePM.swift; sourceTree = "<group>"; };
 		E74B511D287864480089C2B2 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		E74B5121287A26810089C2B2 /* rotationEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rotationEffect.swift; sourceTree = "<group>"; };
-		E7A8C0EF287A35420009EEBA /* 2toggleButtonRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 2toggleButtonRow.swift; sourceTree = "<group>"; };
 		E7A8C0F1287A361A0009EEBA /* NotificationToggleSimpleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationToggleSimpleView.swift; sourceTree = "<group>"; };
 		E7B208882870ED6B008A8731 /* NotificationsSandox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotificationsSandox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7B2088B2870ED6B008A8731 /* NotificationsSandoxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSandoxApp.swift; sourceTree = "<group>"; };
@@ -61,7 +63,8 @@
 		E7B2088A2870ED6B008A8731 /* NotificationsSandox */ = {
 			isa = PBXGroup;
 			children = (
-				E7A8C0EF287A35420009EEBA /* 2toggleButtonRow.swift */,
+				E737B6FD287B61730079280E /* BasicNotificationToggleAM.swift */,
+				E737B6FF287B631E0079280E /* BasicNotificationTogglePM.swift */,
 				E7B2088B2870ED6B008A8731 /* NotificationsSandoxApp.swift */,
 				E7B2088D2870ED6B008A8731 /* ContentView.swift */,
 				E74B5121287A26810089C2B2 /* rotationEffect.swift */,
@@ -152,11 +155,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E737B6FE287B61730079280E /* BasicNotificationToggleAM.swift in Sources */,
+				E737B700287B631E0079280E /* BasicNotificationTogglePM.swift in Sources */,
 				E74B511E287864480089C2B2 /* NotificationModel.swift in Sources */,
 				E7B2088E2870ED6B008A8731 /* ContentView.swift in Sources */,
 				E7A8C0F2287A361A0009EEBA /* NotificationToggleSimpleView.swift in Sources */,
 				E7B2088C2870ED6B008A8731 /* NotificationsSandoxApp.swift in Sources */,
-				E7A8C0F0287A35420009EEBA /* 2toggleButtonRow.swift in Sources */,
 				E74B5122287A26810089C2B2 /* rotationEffect.swift in Sources */,
 				E7B2089C2870EFFA008A8731 /* NotificationDelegate.swift in Sources */,
 			);

@@ -1,10 +1,3 @@
-//
-//  NotificationToggleSimpleView2.swift
-//  NotificationsSandox
-//
-//  Created by Yamashiro on 2022/07/10.
-//
-
 import SwiftUI
 
 struct NotificationToggleSimpleView: View {
@@ -20,8 +13,11 @@ struct NotificationToggleSimpleView: View {
           Text("General")
         }
         Section {
-          ForEach(0..<12) { hour in
-            toggleButtonRow(hour: hour)
+          ForEach(1..<13) { hour in
+            HStack {
+              BasicNotificationToggleAM(hour: hour)
+              BasicNotificationTogglePM(hour: hour)
+            }
           }
         } header: {
           Text("Push alert per hour")

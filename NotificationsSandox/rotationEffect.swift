@@ -1,10 +1,3 @@
-//
-//  rotationEffect.swift
-//  NotificationsSandox
-//
-//  Created by Yamashiro on 2022/07/10.
-//
-
 import SwiftUI
 
 struct RotationEffect: View {

@@ -1,10 +1,3 @@
-//
-//  NotificationModel.swift
-//  NotificationsSandox
-//
-//  Created by Yamashiro on 2022/07/08.
-//
-
 import Foundation
 import NotificationCenter
 
@@ -16,7 +9,7 @@ class NotificationModel: ObservableObject {
   init() {
     UNUserNotificationCenter.current().delegate = notificationDelegate
   }
-
+  
   func getPendingNotificationRequests() -> Array<UNNotificationRequest> {
     UNUserNotificationCenter.current().getPendingNotificationRequests { request in
       //            print(type(of: request))
@@ -24,7 +17,7 @@ class NotificationModel: ObservableObject {
     }
     return self.pendingNotificationRequests
   }
-
+  
   func request(_ hour: Int = 0, _ minute:Int = 0, _ identifier:String) {
     UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {
       (granted, _) in
@@ -44,7 +37,7 @@ class NotificationModel: ObservableObject {
       }
     }
   }
-
+  
   func remove(_ identifier:String) {
     UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [identifier])
   }
