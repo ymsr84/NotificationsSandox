@@ -3,16 +3,7 @@ import UserNotifications
 
 struct BasicNotificationTogglePM: View {
   var hour: Int
-  @State var PMisOn = false {
-    //NotificationCenterへ trueでadd falseでremoveさせるためのdidSet
-    didSet {
-      if self.PMisOn {
-        print("didset:PM +\(String(format: "%02d", hour)) :00 true")
-      } else {
-        print("didset:PM +\(String(format: "%02d", hour)) :00 false")
-      }
-    }
-  }
+  @State var PMisOn = false
   var body: some View {
     let identifier = "Basic" + String(hour) + "PM"
     HStack {
@@ -46,7 +37,6 @@ struct BasicNotificationTogglePM: View {
               if triggerTime.hour == 24 {
                 triggerTime.hour = 0
               }
-              triggerTime.minute = 0
               let trigger = UNCalendarNotificationTrigger(dateMatching: triggerTime, repeats: true)
               let request = UNNotificationRequest(identifier: identifier,content: content, trigger: trigger)
               let center = UNUserNotificationCenter.current()
