@@ -12,14 +12,13 @@ class NotificationModel: ObservableObject {
   
   func getPendingNotificationRequests() -> Array<UNNotificationRequest> {
     UNUserNotificationCenter.current().getPendingNotificationRequests { request in
-      //            print(type(of: request))
       self.pendingNotificationRequests = request
     }
     return self.pendingNotificationRequests
   }
   
   func request(_ hour: Int = 0, _ minute:Int = 0, _ identifier:String) {
-    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {
+    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) {
       (granted, _) in
       if granted {
         let content = UNMutableNotificationContent()

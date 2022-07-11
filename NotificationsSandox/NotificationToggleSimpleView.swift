@@ -2,6 +2,8 @@ import SwiftUI
 
 struct NotificationToggleSimpleView: View {
   @Binding var isRotate180: Bool
+  @State var allAMisON = false
+  @State var allPMisON = false
   @State var useHalf = false
   @State var useSound = true
   @State var useBanner = true
@@ -12,15 +14,6 @@ struct NotificationToggleSimpleView: View {
     NavigationView {
       Form {
         Section {
-          Toggle(isOn: $isRotate180) {
-            Text("Rotate view 180°")
-          }
-        } header: {
-          Text("General")
-        } footer: {
-          Text("オンにすると上下が逆になります．")
-        }
-        Section {
           ForEach(1..<13) { hour in
             HStack {
               BasicNotificationToggleAM(hour: hour)
@@ -29,6 +22,15 @@ struct NotificationToggleSimpleView: View {
           }
         } header: {
           Text("Push alert per hour")
+        }
+        Section {
+          Toggle(isOn: $isRotate180) {
+            Text("Rotate view 180°")
+          }
+        } header: {
+          Text("General")
+        } footer: {
+          Text("オンにすると上下が逆になります．")
         }
         Section {
           Toggle(isOn: $useHalf) {
