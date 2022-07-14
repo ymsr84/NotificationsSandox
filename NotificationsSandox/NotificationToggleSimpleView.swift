@@ -17,11 +17,12 @@ struct NotificationToggleSimpleView: View {
           ForEach(1..<13) { hour in
             HStack {
               BasicNotificationToggleAM(hour: hour)
+              Spacer(minLength: 20)
               BasicNotificationTogglePM(hour: hour)
             }
           }
         } header: {
-          Text("Push alert per hour")
+          Text("Loacl push alert per hour")
         }
         Section {
           Toggle(isOn: $isRotate180) {
@@ -56,7 +57,7 @@ struct NotificationToggleSimpleView: View {
           Text("通知方法")
         }
       }
-      .navigationTitle("Push alert")
+      .navigationTitle("Loacl push alert")
     }
   }
 }
@@ -65,5 +66,8 @@ struct NotificationToggleSimpleView_Previews: PreviewProvider {
   @State static var isRotate180 = false
   static var previews: some View {
     NotificationToggleSimpleView(isRotate180: $isRotate180)
+      .previewDevice("iPhone Xs Max")
+    NotificationToggleSimpleView(isRotate180: $isRotate180)
+      .previewDevice("iPhone SE")
   }
 }

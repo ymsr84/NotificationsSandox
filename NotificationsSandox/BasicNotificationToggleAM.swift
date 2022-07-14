@@ -4,8 +4,16 @@ import UserNotifications
 struct BasicNotificationToggleAM: View {
   var hour: Int
   @State var AMisOn = false
+  var notificationModel = NotificationModel()
+
   var body: some View {
-    let identifier = "Basic" + String(hour) + "AM"
+    //@State @AppStorage("basic\(hour)") var AMisOn = false
+    //@AppStorage("Basic\(hour)") var AMisOn = false
+    let title = "NotificationsSandox"
+    let body = String(hour) + "AM"
+    let identifier = "BasicEveryAM\(hour)"
+    let debuglog = String(AMisOn) + ":AM\(String(format: "%02d", hour)):00" + " identifier:\(identifier)"
+
     HStack {
       Toggle(isOn: $AMisOn) {
         HStack {
@@ -21,30 +29,13 @@ struct BasicNotificationToggleAM: View {
       }
       .onChange(of: AMisOn) { AMisOn in
         if AMisOn {
-          print("onChange:AM +\(String(format: "%02d", hour)) :00 true")
+          print(debuglog)
           //通知のスケジュールを追加
-          UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {
-            (granted, _) in
-            if granted {
-              let content = UNMutableNotificationContent()
-              content.title = (String(format: "%02d", hour)) + ":00"
-              content.body = "Every" + String(hour) + "AM"
-              content.sound = UNNotificationSound.init(named: UNNotificationSoundName(rawValue: "2s.wav"))
-              var triggerTime = DateComponents()
-              triggerTime.hour = hour
-              let trigger = UNCalendarNotificationTrigger(dateMatching: triggerTime, repeats: true)
-              let request = UNNotificationRequest(identifier: identifier,content: content, trigger: trigger)
-              let center = UNUserNotificationCenter.current()
-              //center.getPendingNotificationRequests(completionHandler: request)
-              center.add(request)
-            }else{
-              print("failed to request")
-            }
-          }
+          notificationModel.request(title: title, body: body, identifier: identifier, hour: hour)
         } else {
-          print("onChange:AM +\(String(format: "%02d", hour)) :00 false")
-          //identifierを指定して通知のスケジュールを除去
-          UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [identifier])
+          print(debuglog)
+          //通知のスケジュールを除去
+          notificationModel.remove(identifier: identifier)
         }
       }
     }

@@ -4,8 +4,16 @@ import UserNotifications
 struct BasicNotificationTogglePM: View {
   var hour: Int
   @State var PMisOn = false
+  var notificationModel = NotificationModel()
+
   var body: some View {
-    let identifier = "Basic" + String(hour) + "PM"
+    //@State @AppStorage("basic\(hour)") var PMisOn = false
+    //@AppStorage("Basic\(hour)") var PMisOn = false
+    let title = "NotificationsSandox"
+    let body = String(hour) + "PM"
+    let identifier = "BasicEveryPM\(hour)"
+    let debuglog = String(PMisOn) + ":PM\(String(format: "%02d", hour)):00" + " identifier:\(identifier)"
+
     HStack {
       Toggle(isOn: $PMisOn) {
         HStack {
@@ -21,36 +29,24 @@ struct BasicNotificationTogglePM: View {
       }
       .onChange(of: PMisOn) { PMisOn in
         if PMisOn {
-          print("onChange:PM +\(String(format: "%02d", hour)) :00 true")
+          print(debuglog)
           //通知のスケジュールを追加
-          UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {
-            (granted, _) in
-            if granted {
-              let content = UNMutableNotificationContent()
-              content.title = (String(format: "%02d", hour)) + ":00"
-              content.body = "Every" + String(hour) + "PM"
-              content.sound = UNNotificationSound.init(named: UNNotificationSoundName(rawValue: "2s.wav"))
-              var triggerTime = DateComponents()
-              //DateComponentsの中でPM1が13時として扱える方法が見つかるまで(下記の変換処理記述不要になるまで)24時間表記に変換する
-              //PMのとき12足して24時間表記に変換する
-              triggerTime.hour = hour + 12
-              //              24時のときは0時に変換する
-              if triggerTime.hour == 24 {
-                triggerTime.hour = 0
-              }
-              let trigger = UNCalendarNotificationTrigger(dateMatching: triggerTime, repeats: true)
-              let request = UNNotificationRequest(identifier: identifier,content: content, trigger: trigger)
-              let center = UNUserNotificationCenter.current()
-              //center.getPendingNotificationRequests(completionHandler: request)
-              center.add(request)
-            }else{
-              print("failed to request")
-            }
-          }
+
+          //試している記述
+          //24を渡したとき，その日の24時に通知されるか(当日の+24時＝1日後にならないか)試す
+          notificationModel.request(title: title, body: body, identifier: identifier, hour: hour + 12)
+
+          //もとの記述
+          //PMと1を渡したら13時にできる方法をみつけるまでPMのとき+12して24時間表記に変換する
+          //if hour + 12 == 24 {
+          //notificationModel.request(title: title, body: body, identifier: identifier, hour: 0)
+          //} else {
+          //notificationModel.request(title: title, body: body, identifier: identifier, hour: hour + 12)
+          //}
         } else {
-          print("onChange:PM +\(String(format: "%02d", hour)) :00 false")
-          //identifierを指定して通知のスケジュールを除去
-          UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [identifier])
+          print(debuglog)
+          //通知のスケジュールを除去
+          notificationModel.remove(identifier: identifier)
         }
       }
     }

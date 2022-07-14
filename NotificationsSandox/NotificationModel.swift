@@ -3,7 +3,7 @@ import NotificationCenter
 
 class NotificationModel: ObservableObject {
   var notificationDelegate = NotificationDelegate()
-  let notificationAuthorizationOptions: UNAuthorizationOptions = [.alert, .sound, .badge]
+  let notificationAuthorizationOptions: UNAuthorizationOptions = [.alert, .sound]
   let notificationSound = UNNotificationSound.init(named: UNNotificationSoundName(rawValue: "2s.wav"))
   var pendingNotificationRequests = [UNNotificationRequest]()
   init() {
@@ -17,13 +17,53 @@ class NotificationModel: ObservableObject {
     return self.pendingNotificationRequests
   }
   
-  func request(_ hour: Int = 0, _ minute:Int = 0, _ identifier:String) {
-    UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) {
+  func request(title: String, body: String, identifier: String, hour: Int) {
+    UNUserNotificationCenter.current().requestAuthorization(options: notificationAuthorizationOptions) {
       (granted, _) in
       if granted {
         let content = UNMutableNotificationContent()
-        content.title = "NotificationTitle"
-        content.body = "\(hour):\(String(format:"%2d", minute))"
+        content.title = title
+        content.body = body
+        content.sound = self.notificationSound
+        let triggerTime = DateComponents(hour: hour)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerTime, repeats: false)
+        let request = UNNotificationRequest.init(identifier: identifier, content: content, trigger: trigger)
+        let center = UNUserNotificationCenter.current()
+        //    center.getPendingNotificationRequests(completionHandler: request)
+        center.add(request)
+      }else{
+        print("failed to request")
+      }
+    }
+  }
+
+  func request(title: String, body: String, identifier: String, minute: Int) {
+    UNUserNotificationCenter.current().requestAuthorization(options: notificationAuthorizationOptions) {
+      (granted, _) in
+      if granted {
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = body
+        content.sound = self.notificationSound
+        let triggerTime = DateComponents(minute: minute)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerTime, repeats: false)
+        let request = UNNotificationRequest.init(identifier: identifier, content: content, trigger: trigger)
+        let center = UNUserNotificationCenter.current()
+        //    center.getPendingNotificationRequests(completionHandler: request)
+        center.add(request)
+      }else{
+        print("failed to request")
+      }
+    }
+  }
+
+  func request(title: String, body: String, identifier: String, hour: Int, minute: Int) {
+    UNUserNotificationCenter.current().requestAuthorization(options: notificationAuthorizationOptions) {
+      (granted, _) in
+      if granted {
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = body
         content.sound = self.notificationSound
         let triggerTime = DateComponents(hour: hour, minute: minute)
         let trigger = UNCalendarNotificationTrigger(dateMatching: triggerTime, repeats: false)
@@ -36,9 +76,8 @@ class NotificationModel: ObservableObject {
       }
     }
   }
-  
-  func remove(_ identifier:String) {
+
+  func remove(identifier:String) {
     UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [identifier])
   }
 }
-
