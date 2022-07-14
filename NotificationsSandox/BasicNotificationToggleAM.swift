@@ -1,17 +1,16 @@
 import SwiftUI
-import UserNotifications
 
 struct BasicNotificationToggleAM: View {
   var hour: Int
-  @State var AMisOn = false
   var notificationModel = NotificationModel()
+  @State var AMisOn = false
+//  @AppStorage("Basic\(hour)") var AMisOn = false
 
   var body: some View {
-    //@State @AppStorage("basic\(hour)") var AMisOn = false
-    //@AppStorage("Basic\(hour)") var AMisOn = false
     let title = "NotificationsSandox"
     let body = String(hour) + "AM"
     let identifier = "BasicEveryAM\(hour)"
+    let repeats = true
     let debuglog = String(AMisOn) + ":AM\(String(format: "%02d", hour)):00" + " identifier:\(identifier)"
 
     HStack {
@@ -31,7 +30,7 @@ struct BasicNotificationToggleAM: View {
         if AMisOn {
           print(debuglog)
           //通知のスケジュールを追加
-          notificationModel.request(title: title, body: body, identifier: identifier, hour: hour)
+          notificationModel.request(title: title, body: body, identifier: identifier, repeats: repeats, hour: hour)
         } else {
           print(debuglog)
           //通知のスケジュールを除去

@@ -14,6 +14,9 @@ struct NotificationToggleSimpleView: View {
     NavigationView {
       Form {
         Section {
+          AlertXtimesXsecAfterSample()
+        }
+        Section {
           ForEach(1..<13) { hour in
             HStack {
               BasicNotificationToggleAM(hour: hour)
