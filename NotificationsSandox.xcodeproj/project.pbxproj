@@ -13,6 +13,9 @@
 		E74B5122287A26810089C2B2 /* rotationEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74B5121287A26810089C2B2 /* rotationEffect.swift */; };
 		E74C8FFE28803922001D2C81 /* AlertXtimesXsecAfterSample.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74C8FFD28803922001D2C81 /* AlertXtimesXsecAfterSample.swift */; };
 		E74C900028809A0A001D2C81 /* tabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74C8FFF28809A0A001D2C81 /* tabView.swift */; };
+		E74C90022880D95A001D2C81 /* 2s.wav in Resources */ = {isa = PBXBuildFile; fileRef = E74C90012880D959001D2C81 /* 2s.wav */; };
+		E74C90042880E1C0001D2C81 /* ToggleBasic00Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74C90032880E1C0001D2C81 /* ToggleBasic00Notification.swift */; };
+		E74C90062880E3B7001D2C81 /* ToggleBasic30Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74C90052880E3B7001D2C81 /* ToggleBasic30Notification.swift */; };
 		E7A8C0F2287A361A0009EEBA /* NotificationToggleSimpleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A8C0F1287A361A0009EEBA /* NotificationToggleSimpleView.swift */; };
 		E7B2088C2870ED6B008A8731 /* NotificationsSandoxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B2088B2870ED6B008A8731 /* NotificationsSandoxApp.swift */; };
 		E7B2088E2870ED6B008A8731 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B2088D2870ED6B008A8731 /* ContentView.swift */; };
@@ -28,6 +31,9 @@
 		E74B5121287A26810089C2B2 /* rotationEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rotationEffect.swift; sourceTree = "<group>"; };
 		E74C8FFD28803922001D2C81 /* AlertXtimesXsecAfterSample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertXtimesXsecAfterSample.swift; sourceTree = "<group>"; };
 		E74C8FFF28809A0A001D2C81 /* tabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabView.swift; sourceTree = "<group>"; };
+		E74C90012880D959001D2C81 /* 2s.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2s.wav; sourceTree = "<group>"; };
+		E74C90032880E1C0001D2C81 /* ToggleBasic00Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleBasic00Notification.swift; sourceTree = "<group>"; };
+		E74C90052880E3B7001D2C81 /* ToggleBasic30Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleBasic30Notification.swift; sourceTree = "<group>"; };
 		E7A8C0F1287A361A0009EEBA /* NotificationToggleSimpleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationToggleSimpleView.swift; sourceTree = "<group>"; };
 		E7B208882870ED6B008A8731 /* NotificationsSandox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotificationsSandox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7B2088B2870ED6B008A8731 /* NotificationsSandoxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSandoxApp.swift; sourceTree = "<group>"; };
@@ -69,6 +75,8 @@
 			children = (
 				E737B6FD287B61730079280E /* BasicNotificationToggleAM.swift */,
 				E737B6FF287B631E0079280E /* BasicNotificationTogglePM.swift */,
+				E74C90032880E1C0001D2C81 /* ToggleBasic00Notification.swift */,
+				E74C90052880E3B7001D2C81 /* ToggleBasic30Notification.swift */,
 				E74C8FFD28803922001D2C81 /* AlertXtimesXsecAfterSample.swift */,
 				E7B2088B2870ED6B008A8731 /* NotificationsSandoxApp.swift */,
 				E7B2088D2870ED6B008A8731 /* ContentView.swift */,
@@ -77,6 +85,7 @@
 				E7A8C0F1287A361A0009EEBA /* NotificationToggleSimpleView.swift */,
 				E74B511D287864480089C2B2 /* NotificationModel.swift */,
 				E7B2089B2870EFFA008A8731 /* NotificationDelegate.swift */,
+				E74C90012880D959001D2C81 /* 2s.wav */,
 				E7B2088F2870ED6D008A8731 /* Assets.xcassets */,
 				E7B208912870ED6D008A8731 /* Preview Content */,
 			);
@@ -149,6 +158,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E74C90022880D95A001D2C81 /* 2s.wav in Resources */,
 				E7B208932870ED6D008A8731 /* Preview Assets.xcassets in Resources */,
 				E7B208902870ED6D008A8731 /* Assets.xcassets in Resources */,
 			);
@@ -163,7 +173,9 @@
 			files = (
 				E737B6FE287B61730079280E /* BasicNotificationToggleAM.swift in Sources */,
 				E737B700287B631E0079280E /* BasicNotificationTogglePM.swift in Sources */,
+				E74C90042880E1C0001D2C81 /* ToggleBasic00Notification.swift in Sources */,
 				E74C900028809A0A001D2C81 /* tabView.swift in Sources */,
+				E74C90062880E3B7001D2C81 /* ToggleBasic30Notification.swift in Sources */,
 				E74B511E287864480089C2B2 /* NotificationModel.swift in Sources */,
 				E7B2088E2870ED6B008A8731 /* ContentView.swift in Sources */,
 				E7A8C0F2287A361A0009EEBA /* NotificationToggleSimpleView.swift in Sources */,

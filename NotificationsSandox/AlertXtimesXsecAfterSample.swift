@@ -3,14 +3,14 @@ import SwiftUI
 struct AlertXtimesXsecAfterSample: View {
   @State var isOn = false
   var notificationModel = NotificationModel()
-  var Interval:Double = 5*60
+  var Interval:Double = 5
   var body: some View {
     //@State @AppStorage("basic\(hour)") var PMisOn = false
     //@AppStorage("Basic\(hour)") var PMisOn = false
     let title = "NotificationsSandox"
     let body = "Interval\(Interval)"
     let identifier = "AlertXtimesXsecAfterSample" + String(Interval)
-    let repeats = true
+    let repeats = false
     let debuglog = String(isOn) + " identifier:\(identifier)"
 
     VStack {
