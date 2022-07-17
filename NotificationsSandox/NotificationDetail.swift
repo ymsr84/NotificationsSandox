@@ -1,5 +1,5 @@
 import Foundation
-class NotificationDetails: ObservableObject {
+class NotificationDetail: ObservableObject {
   @Published var enable:Bool
   var hour: Int!
   var minute: Int!
