@@ -20,9 +20,9 @@ struct NotificationToggleSimpleView: View {
         Section {
           ForEach(1..<13) { hour in
             HStack {
-              BasicNotificationToggleAM(hour: hour)
+              BasicNotificationToggleAM(hour: hour, AMisOn: AppStorage(wrappedValue: false, "AM\(hour)isOn"))
               Spacer(minLength: 20)
-              BasicNotificationTogglePM(hour: hour)
+              BasicNotificationTogglePM(hour: hour, PMisOn: AppStorage(wrappedValue: false, "PM\(hour)isOn"))
             }
           }
         } header: {

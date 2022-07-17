@@ -2,9 +2,8 @@ import SwiftUI
 
 struct BasicNotificationToggleAM: View {
   var hour: Int
+  @AppStorage<Bool> var AMisOn: Bool
   var notificationModel = NotificationModel()
-  @State var AMisOn = false
-//  @AppStorage("Basic\(hour)") var AMisOn = false
 
   var body: some View {
     let title = "NotificationsSandox"

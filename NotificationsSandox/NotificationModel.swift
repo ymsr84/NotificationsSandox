@@ -57,6 +57,26 @@ class NotificationModel: ObservableObject {
     }
   }
 
+  func request(title: String, body: String, identifier: String, repeats: Bool, minute: Int, second: Int) {
+    UNUserNotificationCenter.current().requestAuthorization(options: notificationAuthorizationOptions) {
+      (granted, _) in
+      if granted {
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = body
+        content.sound = self.notificationSound
+        let triggerTime = DateComponents(minute: minute, second: second)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerTime, repeats: repeats)
+        let request = UNNotificationRequest.init(identifier: identifier, content: content, trigger: trigger)
+        let center = UNUserNotificationCenter.current()
+        //    center.getPendingNotificationRequests(completionHandler: request)
+        center.add(request)
+      }else{
+        print("failed to request")
+      }
+    }
+  }
+
   func request(title: String, body: String, identifier: String, repeats: Bool, hour: Int, minute: Int) {
     UNUserNotificationCenter.current().requestAuthorization(options: notificationAuthorizationOptions) {
       (granted, _) in

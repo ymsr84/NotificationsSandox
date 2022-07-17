@@ -16,6 +16,7 @@
 		E74C90022880D95A001D2C81 /* 2s.wav in Resources */ = {isa = PBXBuildFile; fileRef = E74C90012880D959001D2C81 /* 2s.wav */; };
 		E74C90042880E1C0001D2C81 /* ToggleBasic00Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74C90032880E1C0001D2C81 /* ToggleBasic00Notification.swift */; };
 		E74C90062880E3B7001D2C81 /* ToggleBasic30Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74C90052880E3B7001D2C81 /* ToggleBasic30Notification.swift */; };
+		E74C900828820646001D2C81 /* NotificationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74C900728820646001D2C81 /* NotificationDetails.swift */; };
 		E7A8C0F2287A361A0009EEBA /* NotificationToggleSimpleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7A8C0F1287A361A0009EEBA /* NotificationToggleSimpleView.swift */; };
 		E7B2088C2870ED6B008A8731 /* NotificationsSandoxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B2088B2870ED6B008A8731 /* NotificationsSandoxApp.swift */; };
 		E7B2088E2870ED6B008A8731 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B2088D2870ED6B008A8731 /* ContentView.swift */; };
@@ -34,6 +35,7 @@
 		E74C90012880D959001D2C81 /* 2s.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 2s.wav; sourceTree = "<group>"; };
 		E74C90032880E1C0001D2C81 /* ToggleBasic00Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleBasic00Notification.swift; sourceTree = "<group>"; };
 		E74C90052880E3B7001D2C81 /* ToggleBasic30Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleBasic30Notification.swift; sourceTree = "<group>"; };
+		E74C900728820646001D2C81 /* NotificationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetails.swift; sourceTree = "<group>"; };
 		E7A8C0F1287A361A0009EEBA /* NotificationToggleSimpleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationToggleSimpleView.swift; sourceTree = "<group>"; };
 		E7B208882870ED6B008A8731 /* NotificationsSandox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotificationsSandox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7B2088B2870ED6B008A8731 /* NotificationsSandoxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSandoxApp.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				E74C90032880E1C0001D2C81 /* ToggleBasic00Notification.swift */,
 				E74C90052880E3B7001D2C81 /* ToggleBasic30Notification.swift */,
 				E74C8FFD28803922001D2C81 /* AlertXtimesXsecAfterSample.swift */,
+				E74C900728820646001D2C81 /* NotificationDetails.swift */,
 				E7B2088B2870ED6B008A8731 /* NotificationsSandoxApp.swift */,
 				E7B2088D2870ED6B008A8731 /* ContentView.swift */,
 				E74B5121287A26810089C2B2 /* rotationEffect.swift */,
@@ -173,6 +176,7 @@
 			files = (
 				E737B6FE287B61730079280E /* BasicNotificationToggleAM.swift in Sources */,
 				E737B700287B631E0079280E /* BasicNotificationTogglePM.swift in Sources */,
+				E74C900828820646001D2C81 /* NotificationDetails.swift in Sources */,
 				E74C90042880E1C0001D2C81 /* ToggleBasic00Notification.swift in Sources */,
 				E74C900028809A0A001D2C81 /* tabView.swift in Sources */,
 				E74C90062880E3B7001D2C81 /* ToggleBasic30Notification.swift in Sources */,
